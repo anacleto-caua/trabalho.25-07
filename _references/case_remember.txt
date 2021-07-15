@@ -1,0 +1,7 @@
+Class names MUST be declared in StudlyCaps (ie: PascalCase).
+
+Class constants MUST be declared in all upper case with underscore separators.
+
+Method names MUST be declared in camelCase.
+
+This guide intentionally avoids any recommendation regarding the use of $StudlyCaps, $camelCase, or $under_score property names.

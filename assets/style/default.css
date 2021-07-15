@@ -1,0 +1,64 @@
+/*main page*/
+body{
+    background-color: #82E83F;/*garante q caso algo aconteça errado com a imagem o bg n seja comprometido*/
+    background-image: url(assets/images/backgrounds/IF-bg-1.jpg);/*infelizmente n achei muitas fotos do instituto em alta qualidade*/
+    background-size: cover;
+    background-attachment: fixed;
+    /*não mexe tá funcionando*/
+}
+
+article{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px solid #045c17;
+    background-color: #fff;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    padding: 25px;
+}
+
+article img{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+article h1,
+article h2{
+    color: #fff;
+    background-color: #045c17;
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 100px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+article h1{
+    font-size: 2rem
+}
+
+article h2{
+    font-size: 1.7rem;
+}
+
+article p{
+    text-indent: 10px;
+}
+
+/*link*/
+article a{
+    color: #045c17;
+    font-weight: bold;
+
+}
+
+article a:hover{
+    color: #71C837;
+}
+
+article a::before{
+    content: '➥';
+}

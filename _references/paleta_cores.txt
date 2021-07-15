@@ -1,0 +1,6 @@
+PALETA DE CORES 
+#045c17  ?  #284713
+#4C8724
+#61AD2F
+#71C837 - if main color
+#82E83F
