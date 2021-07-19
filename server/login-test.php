@@ -30,6 +30,7 @@ if(gettype($result) == "boolean" || gettype($result) == null){
         redirectLog();
     }else{
         if($ocup == 'funcionario'){
+            header('Location: ../admin/index.php');
             echo 'Seja bem vindo '.$result['nome'].' que trabalha como '.$result['ocupacao'].'.';
         }else{
             echo 'Seja bem vindo '.$result['nome'].', um dos nossos leitores.';
