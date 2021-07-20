@@ -29,11 +29,14 @@ if(gettype($result) == "boolean" || gettype($result) == null){
     {
         redirectLog();
     }else{
+        setcookie('login-type', $ocup, time()+3600, '/', 'localhost');
+        setcookie('login-cpf', $cpf, time()+3600, '/', 'localhost');
+
         if($ocup == 'funcionario'){
-            header('Location: ../admin/index.php');
-            echo 'Seja bem vindo '.$result['nome'].' que trabalha como '.$result['ocupacao'].'.';
+            header("Location: ../admin/index.php");
         }else{
-            echo 'Seja bem vindo '.$result['nome'].', um dos nossos leitores.';
+            header("Location: ../");
+
         }
         echo '<br>';
         echo '<a href="../login.php">Retornar à página de login</a>';

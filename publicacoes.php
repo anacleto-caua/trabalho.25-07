@@ -17,6 +17,15 @@
     ?>
     
     <article>
+        <?php
+            include "server/conexao.php";
+
+            $query = "SELECT * FROM `publicacao`";
+            $result = $MySQLi->query($query) or die ("<h1>ERRO TENTE NOVAMENTE MAIS TARDE</h1>");
+            $result=$result->fetch_assoc();
+
+        ?>  
+
         <h1>Aa</h1>
         <div class="book">
             <a href="#"> 

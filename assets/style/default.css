@@ -4,6 +4,7 @@ body{
     background-image: url(assets/images/backgrounds/IF-bg-1.jpg);/*infelizmente n achei muitas fotos do instituto em alta qualidade*/
     background-size: cover;
     background-attachment: fixed;
+    overflow-x: hidden;
     /*não mexe tá funcionando*/
 }
 

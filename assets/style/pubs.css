@@ -1,6 +1,8 @@
 article{
     padding: 0;
     padding-right: 2%;
+    display: flex;
+    flex-wrap: wrap;
 }
 article h1{
     display: block;
@@ -18,6 +20,7 @@ article .book{
     border: 2px solid black;
     display: inline-block;
     overflow: hidden;
+    flex: 1 1 200px;
 }
 
 article .book a{
