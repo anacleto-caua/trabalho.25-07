@@ -5,46 +5,54 @@
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
+
+/*HEADER*/
 header{
     background-color: #045c17;
-    height: 170px;
+    height: 15vh;
+    width: 85vw;
+    float: right;
     color: #fff;
     font-weight: bold;
     font-family: Verdana, Arial, Helvetica, sans-serif
-}
-
-header img{
-    position: absolute;
-    height: 130px;
-    padding: 10px;
 }
 
 header h1{
     font-size: 4rem;
     display: block;
     width: 100%;
-    height: 150px;
+    height: 15vh;
     text-align: center;
-    line-height: 130px;
+    line-height: 15vh;
 }
 
+/*NAV*/
 nav{
-    width: 250px;
-    background-color: #71C837;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 15vw;
     height: 100vh;
+    background-color: #045c17;
     display: inline-block;
     text-align: center;
-    position: sticky;
+    position: fixed;
 }
 
-ul {
+nav .ifet-logo{
+    vertical-align: top;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-ul li {
-    background-color: #71C837;
+nav ul li {
+    background-color: #045c17;
     width: 100%;
     height: 50px;
     line-height: 50px;
@@ -53,49 +61,50 @@ ul li {
 
 }
 
-ul li a {
+nav ul li a {
     text-decoration: none;
     color: #fff;
     display: inline-block;
 }
 
-ul li ul{
+nav ul li ul{
     display: inline-block;
     position: absolute;
-    left: 250px;
+    left: 240px;
 }
 
-ul li ul li {
+nav ul li ul li {
     display: none;
+    width: 100%;
 }
 
-ul li:hover{
+nav ul li:hover{
     background-color: #82E83F;
 }
 
-ul li:hover ul li {
+nav ul li:hover ul li {
     width: 250px;
     background-color: #82E83F;
     text-align: center;
     display: block;
 }
 
-nav img{
-    margin-top: 125%;
+nav .gear{
+    vertical-align: bottom;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
+/*FOOTER*/
 footer{
     border-top: 3px solid #045c17 ;
-    height: 200px;
-    background-color: #fff;
-}
+    height: 20vh;
+    width: 85vw;
+    background-color: #82E83F;
+    display: inline-block;
+    vertical-align: bottom;
+    float: right;
 
-footer img{
-    height: 150px;
-    margin-top: 25px;
-    margin-left: 25px;
-    display: inline;
-    position: absolute;
 }
 
 footer .phrase{
@@ -111,7 +120,7 @@ footer blockquote{
     margin-top: 50px;
     font-size: 2.0rem;
     width: 100%;
-    font-weight: 700;
+    font-weight: 500;
     font-family: "Dancing Script";
 }
 
@@ -123,7 +132,7 @@ footer .phrase-author{
     margin-top: 25px;
     font-family: "Dancing Script";
     font-size: 1.7rem;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 footer .phrase-author::before{
@@ -133,6 +142,5 @@ footer .phrase-author::before{
 footer .copyright{
     display: block;
     text-align: center;
-    position: relative;
-    bottom: 0;
+    vertical-align: bottom;
 } 
