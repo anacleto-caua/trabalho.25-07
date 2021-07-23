@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Jul-2021 às 20:20
+-- Tempo de geração: 24-Jul-2021 às 00:42
 -- Versão do servidor: 8.0.25
 -- versão do PHP: 8.0.3
 
@@ -30,8 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `autor` (
   `id_autor` int NOT NULL,
   `pseudonimo` varchar(45) NOT NULL,
-  `nome` varchar(100) NOT NULL
+  `nome` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `autor`
+--
+
+INSERT INTO `autor` (`id_autor`, `pseudonimo`, `nome`) VALUES
+(1, 'Edson Endrigo', 'Edson Endrigo Silva'),
+(2, 'Rafael Antunes Dias', 'Rafael Antunes Dias'),
+(3, 'J. K. Rowling', 'Joanne Kathleen Rowling'),
+(4, 'Marianum', 'Mariano de Caprium');
 
 -- --------------------------------------------------------
 
@@ -45,17 +55,13 @@ CREATE TABLE `editora` (
   `representante` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- --------------------------------------------------------
-
 --
--- Estrutura da tabela `exemplar`
+-- Extraindo dados da tabela `editora`
 --
 
-CREATE TABLE `exemplar` (
-  `id_exemplar` int NOT NULL,
-  `fk_id_pub` int NOT NULL,
-  `disponivel` tinyint NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+INSERT INTO `editora` (`id_editora`, `nome`, `representante`) VALUES
+(1, 'Pearson', ' Samuel Pearson'),
+(2, 'ThomsonReuters', 'Steve Hasker');
 
 -- --------------------------------------------------------
 
@@ -87,17 +93,16 @@ CREATE TABLE `leitor` (
   `cpf` varchar(11) NOT NULL,
   `matricula` varchar(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
-  `senha` varchar(25) NOT NULL,
-  `aluguel_id` int DEFAULT NULL,
-  `aluguel_data` date DEFAULT NULL
+  `senha` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `leitor`
 --
 
-INSERT INTO `leitor` (`cpf`, `matricula`, `nome`, `senha`, `aluguel_id`, `aluguel_data`) VALUES
-('root-user', 'root-user', 'administrador', 'admin', NULL, NULL);
+INSERT INTO `leitor` (`cpf`, `matricula`, `nome`, `senha`) VALUES
+('1', '2', 'Pedro Silva', '123'),
+('root-user', 'root-user', 'administrador', 'admin');
 
 -- --------------------------------------------------------
 
@@ -108,14 +113,22 @@ INSERT INTO `leitor` (`cpf`, `matricula`, `nome`, `senha`, `aluguel_id`, `alugue
 CREATE TABLE `publicacao` (
   `id_pub` int NOT NULL,
   `exemplares` int NOT NULL,
-  `tipo` varchar(15) NOT NULL,
-  `titulo` varchar(30) NOT NULL,
+  `tipo` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `titulo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `fk_id_autor` int NOT NULL,
   `fk_id_editora` int NOT NULL,
   `data_publicacao` date NOT NULL,
   `paginas` int NOT NULL,
   `lingua` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `publicacao`
+--
+
+INSERT INTO `publicacao` (`id_pub`, `exemplares`, `tipo`, `titulo`, `fk_id_autor`, `fk_id_editora`, `data_publicacao`, `paginas`, `lingua`) VALUES
+(1, 3, 'Livro Fantasia', 'Harry Potter e a Pedra Filosofal', 3, 1, '2001-07-05', 250, 'Português'),
+(2, 5, 'Programação', 'Código Limpo', 1, 1, '2021-07-06', 500, 'Inglês');
 
 --
 -- Índices para tabelas despejadas
@@ -132,13 +145,6 @@ ALTER TABLE `autor`
 --
 ALTER TABLE `editora`
   ADD PRIMARY KEY (`id_editora`);
-
---
--- Índices para tabela `exemplar`
---
-ALTER TABLE `exemplar`
-  ADD PRIMARY KEY (`id_exemplar`),
-  ADD KEY `id_pub_idx` (`fk_id_pub`);
 
 --
 -- Índices para tabela `funcionario`
@@ -168,35 +174,23 @@ ALTER TABLE `publicacao`
 -- AUTO_INCREMENT de tabela `autor`
 --
 ALTER TABLE `autor`
-  MODIFY `id_autor` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_autor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `editora`
 --
 ALTER TABLE `editora`
-  MODIFY `id_editora` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `exemplar`
---
-ALTER TABLE `exemplar`
-  MODIFY `id_exemplar` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_editora` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `publicacao`
 --
 ALTER TABLE `publicacao`
-  MODIFY `id_pub` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pub` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restrições para despejos de tabelas
 --
-
---
--- Limitadores para a tabela `exemplar`
---
-ALTER TABLE `exemplar`
-  ADD CONSTRAINT `id_pub` FOREIGN KEY (`fk_id_pub`) REFERENCES `publicacao` (`id_pub`);
 
 --
 -- Limitadores para a tabela `publicacao`
