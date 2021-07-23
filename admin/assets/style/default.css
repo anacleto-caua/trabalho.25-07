@@ -44,3 +44,26 @@ section a:hover{
 section a::before{
     content: '➥';
 }
+
+section .campo{
+    height: min-content;
+    padding-left: 25px;
+    padding-bottom: 25px;
+}
+
+section table{
+    border-collapse: collapse;
+    border: 2px solid #000;
+    margin-left: 25px;
+}
+
+section th{
+    border: 2px solid #000;
+    background-color: #82E83f;
+    padding: 5px;
+}
+
+section td{
+    border: 2px solid rgb(2, 1, 1);
+    padding: 7px;
+}

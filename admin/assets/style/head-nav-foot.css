@@ -1,31 +1,52 @@
 *{
-    margin: 0;
-    padding: 0;
-    border: 0;
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
+body, header, nav{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 
 /*HEADER*/
 header{
     background-color: #045c17;
-    height: 15vh;
+    height: 192px;
     width: 85vw;
     float: right;
     color: #fff;
     font-weight: bold;
-    font-family: Verdana, Arial, Helvetica, sans-serif
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 
 header h1{
-    font-size: 4rem;
+    font-size: 3rem;
     display: block;
     width: 100%;
-    height: 15vh;
     text-align: center;
-    line-height: 15vh;
 }
 
+header ul{
+    height: 70px;
+    list-style: none;
+    width: 100%;
+    background-color: #82E83F;
+}
+
+header ul li{
+    height: max-content;
+    width: 20%;
+    float: left;
+    font-size: 1.3em;
+}
+
+header ul li a{
+    line-height: 70px;
+    padding: 15px 15px 15px 15px;
+    text-decoration: none;
+    color: #fff;
+}
 /*NAV*/
 nav{
     margin: 0;
@@ -70,7 +91,7 @@ nav ul li a {
 nav ul li ul{
     display: inline-block;
     position: absolute;
-    left: 240px;
+    left: 15vw;
 }
 
 nav ul li ul li {
@@ -83,7 +104,7 @@ nav ul li:hover{
 }
 
 nav ul li:hover ul li {
-    width: 250px;
+    width: 15vw;
     background-color: #82E83F;
     text-align: center;
     display: block;
@@ -95,6 +116,7 @@ nav .gear{
     margin-bottom: 5vh;
 }
 
+
 /*FOOTER*/
 footer{
     border-top: 3px solid #045c17 ;
@@ -104,7 +126,6 @@ footer{
     display: inline-block;
     vertical-align: bottom;
     float: right;
-
 }
 
 footer .phrase{

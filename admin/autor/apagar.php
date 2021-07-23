@@ -12,24 +12,44 @@
     <link rel="stylesheet" href="../assets/style/head-nav-foot.css">
 </head>
 <body>
-    <?php
-        include "../assets/iframes/header.html";
+<?php
+        include "../assets/iframes/header_in.html";
         include "../assets/iframes/nav_in.html";
     ?>
 
     <section>
-        <h1>Publicações</h1>
-        <h2>O que essa tabela contém?</h2> 
-        <p>
-            Essa página reúne todos os livros, 
-        </p>
-
+        
+        <h1>Apagar Autor</h1>
+        <h2>Qual autor você deseja apagar?</h2> 
+        
+        <form action="apagar.php" method="get">
+            <table>
+                <tr>
+                    <td>
+                        Id:
+                    </td>
+                    <td>
+                        <input type="number" name="id">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Apagar">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <?php
+            if(isset($_GET['id'])){
+                $query = "";
+                $MySQLi->query($query);
+            }
+        ?>
     </section>
 
     <?php
         include "../assets/iframes/footer.html";
     ?>
-
-    <script src="../assets/scripts/random/random-phrase.js"></script>
+ 
 </body>
 </html>

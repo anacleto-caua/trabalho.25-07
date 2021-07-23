@@ -21,7 +21,7 @@ if(isset( $_POST['cpf-in']) && isset( $_POST['senha-in']) && isset( $_POST['ocup
 $query = "SELECT * FROM `$ocup` WHERE cpf='$cpf' AND senha='$senha'";
 $result = $MySQLi->query($query) or die (redirectLog());
 
-if(gettype($result) == "boolean" || gettype($result) == null){
+if(gettype($result) == 'boolean' && gettype($result) == 'NULL'){
     redirectLog();
 }else{
     $result = $result->fetch_assoc();
@@ -29,8 +29,8 @@ if(gettype($result) == "boolean" || gettype($result) == null){
     {
         redirectLog();
     }else{
-        setcookie('login-type', $ocup, time()+3600, '/', 'localhost');
-        setcookie('login-cpf', $cpf, time()+3600, '/', 'localhost');
+        setcookie('login-type', $ocup, time()+3600*10, '/', 'localhost');
+        setcookie('login-cpf', $cpf, time()+3600*10, '/', 'localhost');
 
         if($ocup == 'funcionario'){
             header("Location: ../admin/index.php");
