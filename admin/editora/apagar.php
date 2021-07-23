@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autor - Área do Administrador</title>
+    <title>Editora - Área do Administrador</title>
     <link rel="stylesheet" href="../assets/style/default.css">
     <link rel="stylesheet" href="../assets/style/head-nav-foot.css">
 </head>
@@ -19,8 +19,8 @@
 
     <section>
         
-        <h1>Apagar Autor</h1>
-        <h2>Qual autor você deseja apagar?</h2> 
+        <h1>Apagar Editora</h1>
+        <h2>Qual editora você deseja apagar?</h2> 
         
         <form action="apagar.php" method="get">
             <table>
@@ -42,7 +42,7 @@
         <?php
             if(isset($_GET['id'])){
                 $id=$_GET['id'];
-                $query = "DELETE FROM `autor` WHERE `id_autor`='$id'";
+                $query = "DELETE FROM `editora` WHERE `id_editora`='$id'";
                 $MySQLi->query($query);
             }
         ?>

@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autor - Área do Administrador</title>
+    <title>Funcionário - Área do Administrador</title>
     <link rel="stylesheet" href="../assets/style/default.css">
     <link rel="stylesheet" href="../assets/style/head-nav-foot.css">
 </head>
@@ -19,17 +19,17 @@
 
     <section>
         
-        <h1>Apagar Autor</h1>
-        <h2>Qual autor você deseja apagar?</h2> 
+        <h1>Apagar Funcionário</h1>
+        <h2>Qual funcionário você deseja apagar?</h2> 
         
         <form action="apagar.php" method="get">
             <table>
                 <tr>
                     <th>
-                        Id:
+                        CPF:
                     </th>
                     <td>
-                        <input type="number" name="id">
+                        <input type="text" name="cpf">
                     </td>
                 </tr>
                 <tr>
@@ -40,9 +40,9 @@
             </table>
         </form>
         <?php
-            if(isset($_GET['id'])){
-                $id=$_GET['id'];
-                $query = "DELETE FROM `autor` WHERE `id_autor`='$id'";
+            if(isset($_GET['cpf'])){
+                $cpf=$_GET['cpf'];
+                $query = "DELETE FROM `funcionario` WHERE `cpf`='$cpf'";
                 $MySQLi->query($query);
             }
         ?>

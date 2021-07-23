@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autor - Área do Administrador</title>
+    <title>Leitor - Área do Administrador</title>
     <link rel="stylesheet" href="../assets/style/default.css">
     <link rel="stylesheet" href="../assets/style/head-nav-foot.css">
 </head>
@@ -18,28 +18,36 @@
     ?>
 
     <section>
-        <h1>Atualizar Autor</h1>
+        <h1>Atualizar Leitor</h1>
         <h2>Quem você deseja atualizar?</h2>
         <form action="atualizar.php">        
         <table>
             <tr>
                 <th>
-                    Antigo Id:
+                    Antigo CPF:
                 </th>
                 <td>
-                    <input type="number" name="id">
+                    <input type="text" name="cpf">
                 </td>
             </tr>
         </table>
-            <h2>Com quais dados você deseja atualizar?</h2>
 
+        <h2>Com quais dados você deseja atualizar?</h2>
         <table>
             <tr>
                 <th>
-                    Id:
+                    CPF:
                 </th>
                 <td>
-                    <input type="number" name="novo_id">
+                    <input type="text" name="novo_cpf">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Matricula:
+                </th>
+                <td>
+                    <input type="text" name="nova_matri">
                 </td>
             </tr>
             <tr>
@@ -47,16 +55,16 @@
                     Nome:
                 </th>
                 <td>
-                    <input type="text" name="nome_novo">
+                    <input type="text" name="novo_nome">
                 </td>
             </tr>
             <tr>
                 <th>
-                    Pseudonimo: 
+                    Senha:
                 </th>
                 <td>
-                    <input type="text" name="pseu_novo">
-                </td>                 
+                    <input type="password" name="nova_senha">
+                </td>
             </tr>
             <tr>
                 <td colspan="2">
@@ -70,14 +78,15 @@
 
         </form>
         <?php
-            if(isset($_GET['novo_id']) && isset($_GET['nome_novo']) && isset($_GET['pseu_novo'])){
-                $id=$_GET['id'];
+            if(isset($_GET['cpf']) && isset($_GET['novo_cpf']) && isset($_GET['novo_nome']) && isset($_GET['nova_senha']) && isset($_GET['nova_matri'])){
+                $cpf = $_GET['cpf'];
+                $nova_matri = $_GET['nova_matri'];
+                $novo_cpf = $_GET['novo_cpf'];
+                $novo_nome = $_GET['novo_nome'];
+                $nova_senha = $_GET['nova_senha'];
 
-                $novo_id=$_GET['novo_id'];
-                $nome_novo=$_GET['nome_novo'];
-                $pseu_novo=$_GET['pseu_novo'];
 
-                $query="UPDATE `autor` SET `id_autor`='$novo_id', `nome`='$nome_novo', `pseudonimo`='$pseu_novo' WHERE `id_autor`='$id'";
+                $query="UPDATE `leitor` SET `cpf`='$novo_cpf', `matricula`='$nova_matri', `nome`='$novo_nome',  `senha`='$nova_senha' WHERE `cpf`='$cpf'";
                 $MySQLi->query($query);
             }
         ?>

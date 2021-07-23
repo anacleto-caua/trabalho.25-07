@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autor - Área do Administrador</title>
+    <title>Editora - Área do Administrador</title>
     <link rel="stylesheet" href="../assets/style/default.css">
     <link rel="stylesheet" href="../assets/style/head-nav-foot.css">
 </head>
@@ -18,7 +18,7 @@
     ?>
 
     <section>
-        <h1>Atualizar Autor</h1>
+        <h1>Atualizar Editora</h1>
         <h2>Quem você deseja atualizar?</h2>
         <form action="atualizar.php">        
         <table>
@@ -31,8 +31,8 @@
                 </td>
             </tr>
         </table>
-            <h2>Com quais dados você deseja atualizar?</h2>
 
+        <h2>Com quais dados você deseja atualizar?</h2>
         <table>
             <tr>
                 <th>
@@ -52,10 +52,10 @@
             </tr>
             <tr>
                 <th>
-                    Pseudonimo: 
+                    Representante: 
                 </th>
                 <td>
-                    <input type="text" name="pseu_novo">
+                    <input type="text" name="representante_novo">
                 </td>                 
             </tr>
             <tr>
@@ -70,14 +70,14 @@
 
         </form>
         <?php
-            if(isset($_GET['novo_id']) && isset($_GET['nome_novo']) && isset($_GET['pseu_novo'])){
+            if(isset($_GET['novo_id']) && isset($_GET['nome_novo']) && isset($_GET['representante_novo'])){
                 $id=$_GET['id'];
 
                 $novo_id=$_GET['novo_id'];
                 $nome_novo=$_GET['nome_novo'];
-                $pseu_novo=$_GET['pseu_novo'];
+                $repre_novo=$_GET['representante_novo'];
 
-                $query="UPDATE `autor` SET `id_autor`='$novo_id', `nome`='$nome_novo', `pseudonimo`='$pseu_novo' WHERE `id_autor`='$id'";
+                $query="UPDATE `editora` SET `id_editora`='$novo_id', `nome`='$nome_novo', `representante`='$repre_novo' WHERE `id_editora`='$id'";
                 $MySQLi->query($query);
             }
         ?>
